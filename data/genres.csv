@@ -1,0 +1,204 @@
+id,label_uk,label_en,n_paintings
+Q1772,епітафія,epitaph,1
+Q6034,дадаїзм,Dada,1
+Q8362,мініатюра,manuscript illumination,3
+Q17514,графіті,graffiti,1
+Q17516,стритарт,street art,4
+Q34636,модерн,Art Nouveau,3
+Q38166,модерне мистецтво,modern art,1
+Q40446,ню,nude,309
+Q42865,орієнталізм,Orientalism,7
+Q42934,кубізм,cubism,1
+Q47783,постмодернізм,Postmodernism,1
+Q79218,триптих,triptych,3
+Q128115,абстракціонізм,abstract art,80
+Q131808,маньєризм,Mannerism,1
+Q132137,ікона,icon,2
+Q133067,мозаїка,mosaic,1
+Q134147,Поп-арт,pop art,1
+Q134307,портрет,portrait,715
+Q158607,марина,marine art,480
+Q164800,символізм,Symbolism,2
+Q166030,ведута,Veduta,31
+Q166713,постімпресіонізм,Post-impressionism,1
+Q170571,натюрморт,still life,482
+Q174705,олійне малярство,oil painting,2
+Q180902,соціалістичний реалізм,socialist realism,2
+Q185905,укійо-е,ukiyo-e,6
+Q186030,сучасне мистецтво,contemporary art,1
+Q189458,академізм,academic art,2
+Q191163,пейзаж,landscape painting,604
+Q192110,автопортрет,self-portrait,502
+Q203603,Інтер'єр як жанр,interior portrait,1
+Q210189,антифашизм,anti-fascism,1
+Q210377,гаучо,gaucho,1
+Q211775,,pulpit,1
+Q214127,жанрове малярство,genre painting,1
+Q219540,світлотінь,chiaroscuro,1
+Q232172,Марія Антонія Іспанська,María Antonia of Spain,1
+Q273383,Memento mori,memento mori,1
+Q273506,Паризька школа,School of Paris,1
+Q282129,портретна мініатюра,miniature,156
+Q284521,,bijin-ga,1
+Q326478,лендарт,land art,1
+Q383898,батальний жанр,military art,39
+Q390001,пастораль,pastoral,6
+Q468930,Тромплей,trompe-l'œil,16
+Q516583,Шань-шуй,shan shui,3
+Q519443,орфізм,Orphism,1
+Q557141,публічне мистецтво,public art,17
+Q558875,Школа У,Wu School,13
+Q577147,,Neoclassical painting,1
+Q583915,сакральна геометрія,sacred geometry,1
+Q588951,Десюдепорт,overdoor,5
+Q594150,Ар Брют,art brut,6
+Q616973,,yakusha-e,1
+Q631931,декоративне мистецтво,decorative art,2
+Q650276,маріологія,mariology,1
+Q723620,,Bambocciata,1
+Q733095,ванітас,vanitas,16
+Q742333,історичний живопис,history painting,516
+Q742530,ідилія,idyll,5
+Q756712,Тушеві картини,ink wash painting,13
+Q765606,,Orientalist painting,2
+Q831768,мистецтво Індії,Indian art,2
+Q837024,соціальний реалізм,social realism,1
+Q842183,Син-Ханга,shin-hanga,1
+Q860372,цифрове мистецтво,digital art,1
+Q862168,,nise-e,2
+Q863679,Шинуазрі,chinoiserie,1
+Q906066,,Christian worship,1
+Q938864,Мексиканські стінописи,Mexican muralism,4
+Q939559,Фотореалізм,photorealism,2
+Q939654,,conversation piece,2
+Q941875,променизм,Rayonism,1
+Q1001041,Буддійське мистецтво,Buddhist art,1
+Q1047337,побутовий жанр,genre art,546
+Q1049336,Могольський живопис,Mughal painting,5
+Q1136545,Костумбризм,Costumbrismo,2
+Q1150568,Хуатінська (Сунцзянська) школа,,4
+Q1150941,Школа Чже,Zhe school,1
+Q1168168,,erotic art,4
+Q1181933,Плафон,ceiling painting,1
+Q1185399,Галантна доба,Fête galante,1
+Q1187814,,Korean painting,1
+Q1233393,,ship portrait,2
+Q1400843,кубофутуризм,Cubo-Futurism,1
+Q1433099,Вигаданий портрет троньє,tronie,5
+Q1479489,Аероживопис,aeropittura,1
+Q1551015,груповий портрет,group portrait,174
+Q1580216,,Noucentisme,1
+Q1622217,фігуративізм,figurative art,35
+Q1666094,,interior painting,2
+Q1683337,Нісікі-е,nishiki-e,3
+Q1935974,міський пейзаж,cityscape,441
+Q1976598,Панно,pannel,1
+Q1989975,ніхонґа,Nihonga,4
+Q2278308,Капріччо,capriccio,14
+Q2348713,донаторський портрет,donor portrait,1
+Q2415378,,schutterstuk,31
+Q2448670,,cabinet painting,1
+Q2479770,на відкритому повітрі,outside,1
+Q2647254,етюд,study,2
+Q2839016,алегорія,allegory,517
+Q2864555,,Nanban art,1
+Q2864679,,Mughal art,1
+Q2864737,сакральне мистецтво,religious art,930
+Q2998430,інтер'єр,interior,1
+Q3099098,Співдружність чотирьох Ванів,Four Wangs,5
+Q3108623,,Cusco school,1
+Q3111286,,Dutch School,2
+Q3305213,картина,painting,1
+Q3341836,,nikuhitsu-ga,2
+Q3347103,,neo-pop,3
+Q3373687,,winter landscape,1
+Q3374349,,Christian painting,15
+Q3374353,батальний живопис,battle painting,71
+Q3374376,міфологічний живопис,mythological painting,561
+Q3376676,,Shanghai School,13
+Q3399515,Кінний портрет,equestrian portrait,84
+Q3501307,,Troubadour style,1
+Q3631050,Живопис Пахарі,Pahari painting,6
+Q3796486,Ботанічна ілюстрація,botanical illustration,1
+Q4200893,,Hindu art,1
+Q4382010,профіль людини,profile,2
+Q4446608,суворий стиль,Severe style (Soviet art),1
+Q5348995,,Eight Masters of Nanjing,1
+Q5448026,,figure painting,52
+Q5475328,,Four Masters of the Yuan Dynasty,5
+Q5602008,індіанізм,Indigenismo,1
+Q5706631,,el museo de arte colonial,1
+Q6362867,,Kangra painting,1
+Q6498959,масштабна модель,scale model,1
+Q7046534,Ноктюрн (живопис),nocturne,12
+Q7441810,Морський пейзаж,seascape,1
+Q7532771,,Six Masters of the early Qing period,6
+Q7766995,,street scene,2
+Q10297081,,,12
+Q10297207,,Chinese finger painting,1
+Q10857409,реалізм,realism,1
+Q11087750,,Four Masters of the Ming Dynasty,3
+Q11377547,,Buddhist painting,1
+Q11484256,,yūrei-zu,1
+Q11546300,,musha-e,1
+Q11615742,,Bird-and-flower painting of Japan,1
+Q11658098,,,1
+Q11766734,марина,marine painting,1
+Q12012994,,art gallery painting,2
+Q12199969,,Casta paintings,2
+Q12303833,,floral painting,236
+Q15146165,,Regents group portrait,14
+Q15838173,Регіоналізм,Regionalism,1
+Q16875712,анімалістика,animal art,305
+Q18353841,архітектурний живопис,architectural painting,122
+Q18811686,,interior view,165
+Q18822288,архітектурний вигляд,architectural view,12
+Q18915146,лібертинізм,libertinism,2
+Q19547247,,family portrait,125
+Q19968941,,double portrait,80
+Q20669546,,BDSM-themed fiction,1
+Q21074330,,church interior,165
+Q21088117,,Haerlempjes,4
+Q21532554,,,1
+Q22808839,оголена жінка,naked woman,1
+Q22925400,,sport art,10
+Q24205322,,catafalque portrait,5
+Q26263265,,Western art,3
+Q28173212,,Deccan painting,1
+Q29018234,,Four Monks,3
+Q29048280,,fashion illustration,1
+Q30303254,,historiated portrait,22
+Q33162389,,byōbu-e,5
+Q50488927,,fan painting,6
+Q56199405,,inverted still-life,4
+Q57941195,,Nine Friends of Painting,4
+Q60133444,,nude self-portrait,2
+Q60853744,,French School,1
+Q61409754,,fruit painting,12
+Q61743839,,Banquet piece,3
+Q61747235,,pronk still life,9
+Q78392415,полювання,hunting,12
+Q80578552,,heraldic art,7
+Q81100296,станковий живопис,easel painting,1
+Q85815150,,Western American Art,1
+Q95739264,,Crowned nuns,1
+Q107196379,,documentary painting,4
+Q107196380,,historical painting,2
+Q113303607,,garland painting,1
+Q115574326,,mythological art,7
+Q116457653,,ink and color painting,40
+Q116457664,,ink and light color painting,1
+Q116691808,,Miniature painting,6
+Q116843676,,Xin'an School,1
+Q119426678,,Multiple-Figure Composition,1
+Q126456658,,fusuma-e,4
+Q131199326,,narrative painting,3
+Q132794701,,,4
+Q132890179,,,2
+Q132949829,,,2
+Q132967387,,,5
+Q132967668,,,3
+Q133040435,,,1
+Q133080401,,,1
+Q133538767,,,1
+Q141399995,,historical landscape,2

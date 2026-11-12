@@ -1,0 +1,232 @@
+id,label_uk,label_en,n_paintings
+Q4692,Відродження,Renaissance,2
+Q6034,дадаїзм,Dada,0
+Q8361,музика бароко,Baroque music,0
+Q10998,картопля,potato,0
+Q14378,неокласицизм,Neoclassicism,16
+Q34636,модерн,Art Nouveau,19
+Q37068,романтизм,Romanticism,6
+Q37853,бароко,Baroque,13
+Q38166,модерне мистецтво,modern art,1
+Q39427,сюрреалізм,surrealism,2
+Q40415,імпресіонізм,Impressionism,6
+Q42865,орієнталізм,Orientalism,13
+Q42934,кубізм,cubism,3
+Q46805,романське мистецтво,Romanesque art,2
+Q46825,готика,Gothic art,3
+Q55995,натуралізм (малярство),Naturalism,1
+Q55996,натуралізм,naturalism,0
+Q62506,Караваджизм,Caravaggisti,2
+Q80113,експресіонізм,Expressionism,2
+Q102932,авангардизм,avant-garde,0
+Q109260,Передвижники,Peredvizhniki,0
+Q122960,рококо,Rococo,2
+Q124354,Баугауз,Bauhaus,0
+Q128115,абстракціонізм,abstract art,2
+Q131221,футуризм,Futurism,1
+Q131808,маньєризм,Mannerism,11
+Q134147,Поп-арт,pop art,0
+Q143357,Барбізонська школа,Barbizon school,0
+Q147516,магічний реалізм,magic realism,0
+Q150091,неоімпресіонізм,Neo-impressionism,0
+Q154432,Бідермаєр,Biedermeier,3
+Q160218,Нова речовинність,New Objectivity,0
+Q164800,символізм,Symbolism,10
+Q166593,фовізм,Fauvism,0
+Q166713,постімпресіонізм,Post-impressionism,3
+Q170292,класицизм,Classicism,0
+Q173436,мінімалізм,Minimalism,0
+Q177725,абстрактний експресіонізм,abstract expressionism,0
+Q180902,соціалістичний реалізм,socialist realism,0
+Q184814,прерафаеліти,Pre-Raphaelite Brotherhood,6
+Q185905,укійо-е,ukiyo-e,0
+Q186030,сучасне мистецтво,contemporary art,1
+Q189458,академізм,academic art,20
+Q189772,,Brazilian academic art,1
+Q191970,Супрематизм,Suprematism,3
+Q200034,Пуантилізм,pointillism,1
+Q203209,концептуальне мистецтво,conceptual art,0
+Q207103,конструктивізм,Constructivism,1
+Q207445,Стиль,De Stijl,2
+Q208208,Віденська сецесія,Vienna Secession,0
+Q213523,Кватроченто,Quattrocento,0
+Q214127,жанрове малярство,genre painting,0
+Q215198,Веризм,verguismo,0
+Q217213,малярство дії,action painting,0
+Q252645,,Delft school,0
+Q252801,Школа Кано,Kanō school,1
+Q256922,естетизм,Aestheticism,0
+Q258694,,Incoherents,1
+Q263985,романтичний націоналізм,romantic nationalism,1
+Q273495,Школа Нансі,École de Nancy,0
+Q273506,Паризька школа,School of Paris,0
+Q281108,наївне мистецтво,naïve art,4
+Q319973,,Munich school,0
+Q330369,Рух мистецтв і ремесел,Arts and Crafts movement,0
+Q369418,Живопис жорстких країв,hard-edge painting,0
+Q382056,,Pont-Aven School,0
+Q397469,Неоромантизм,Neo-romanticism,0
+Q422681,Назарейці,Nazarene movement,2
+Q430167,Іспанський Ренесанс,Spanish Renaissance,1
+Q443153,Ранній нідерландський живопис,Early Netherlandish painting,31
+Q469913,,American scene painting,0
+Q477134,,Antwerp Mannerism,0
+Q478717,,Amsterdam Impressionism,1
+Q503708,,Les Nabis,0
+Q519443,орфізм,Orphism,1
+Q520750,,fijnschilder,0
+Q557532,,Newlyn School,0
+Q558875,Школа У,Wu School,0
+Q574985,Мак'яйолі,Macchiaioli,1
+Q577147,,Neoclassical painting,3
+Q584084,Школа Фонтенбло,School of Fontainebleau,1
+Q594150,Ар Брют,art brut,2
+Q603529,Група Блумзбері,Bloomsbury Group,0
+Q610687,Венеційська школа,Venetian school,10
+Q610877,Північне Відродження,Northern Renaissance,3
+Q617166,,Russian Futurism,0
+Q657377,,Scottish Colourists,0
+Q680559,Дюссельдорфська художня школа,Düsseldorf school of painting,1
+Q724976,Школа «Кошик для сміття»,Ashcan School,0
+Q749832,гіперреалізм,hyperrealism,1
+Q750197,Гризайль,grisaille,1
+Q751880,Японізм,Japonisme,0
+Q753683,Метафізичний живопис,metaphysical painting,1
+Q765606,,Orientalist painting,0
+Q808561,живопис бароко,Baroque painting,4
+Q829895,Гарлемський ренесанс,Harlem Renaissance,0
+Q837024,соціальний реалізм,social realism,1
+Q843393,Мейл-арт,mail art,0
+Q847847,синтетизм,synthetism,0
+Q848365,Примітивізм,primitivism,1
+Q856643,Треченто,Trecento,0
+Q858436,Неореалізм,neorealism,0
+Q861297,,Company style,0
+Q867769,Інтернаціональна готика,International Gothic,2
+Q878985,модернізм,modernism,2
+Q889525,Клуазонізм,cloisonnism,0
+Q891532,Болонська школа,Bolognese school,2
+Q913340,,Florentine Renaissance art,2
+Q915841,Вортицизм,vorticism,1
+Q934618,Золотий вік Данії,Danish Golden Age,1
+Q941875,променизм,Rayonism,1
+Q943853,Школа річки Гудзон,Hudson River school,1
+Q947129,готичний живопис,Gothic painting,5
+Q979160,Проторенесанс,Proto-Renaissance,8
+Q1047337,побутовий жанр,genre art,0
+Q1049336,Могольський живопис,Mughal painting,0
+Q1055886,,forlivese school of art,1
+Q1061960,,Purismo,0
+Q1122677,каталонський модернізм,Catalan modernism,1
+Q1125039,,Post-romanticism,0
+Q1136545,Костумбризм,Costumbrismo,1
+Q1142000,,Southern School,0
+Q1150941,Школа Чже,Zhe school,0
+Q1159870,Лумінізм,Luminism,0
+Q1164982,Живопис кольорового поля,Color Field,0
+Q1192525,,woodblock printing in Japan,0
+Q1210725,Сецессіон,secession,0
+Q1232633,Гаазька школа живопису,Hague School,0
+Q1255562,,Glasgow School,0
+Q1294605,Югендстиль,Jugendstil,0
+Q1332178,Сієнська школа,Sienese school,2
+Q1335478,,Katsukawa school,0
+Q1362030,Експресіонізм (література),expressionism,0
+Q1378978,Критська школа,Cretan school,2
+Q1400843,кубофутуризм,Cubo-Futurism,1
+Q1401605,Російський авангард,Russian avant-garde,0
+Q1404472,італійське Відродження,Italian Renaissance,6
+Q1407578,Феррарська школа живопису,School of Ferrara,0
+Q1421557,,light art,0
+Q1472236,Раннє Відродження,Early Renaissance,17
+Q1474884,Високе Відродження,High Renaissance,12
+Q1578378,прецизіонізм,Precisionism,0
+Q1580216,,Noucentisme,0
+Q1628039,Утрехтські караваджисти,Utrecht Caravaggism,0
+Q1633309,Йога (живопис),Yōga,0
+Q1672822,,Celtic Revival,1
+Q1808635,Бубновий валет,Jack of Diamonds,0
+Q1940971,,Molse School,0
+Q1989975,ніхонґа,Nihonga,0
+Q1994273,живопис фламандського бароко,Flemish Baroque painting,2
+Q2111003,,Salon de la Rose + Croix,0
+Q2141991,,Norwich school of painters,0
+Q2316866,,geometric abstraction,1
+Q2344569,,Bamboccianti,0
+Q2349908,французький Ренесанс,French Renaissance,0
+Q2352880,Золота доба голландського живопису,Dutch Golden Age painting,10
+Q2405999,,fairy painting,0
+Q2407355,,Hasegawa school,1
+Q2455000,німецьке Відродження,German Renaissance,3
+Q2477112,німецький романтизм,German Romanticism,0
+Q2477787,Імпресіонізм в Сполучених Штатах,American Impressionism,3
+Q2478178,Умбрійська школа,Umbrian school,2
+Q2487023,дивізіонізм,divisionism,3
+Q2498493,,Pleinairisme,0
+Q2614483,,Pre-romanticism,0
+Q2632089,Голландський і фламандський ренесансний живопис,Dutch and Flemish Renaissance painting,0
+Q2642826,реалізм,French Realism,12
+Q2914470,італійський живопис епохи Відродження,Italian Renaissance painting,0
+Q2984254,,Etaples art colony,0
+Q2988788,раджпутський живопис,Rajput painting,1
+Q3088366,,Romantic painting,4
+Q3088967,,Kingdom of Valencia Golden Age,1
+Q3111286,,Dutch School,0
+Q3179819,Школа Рін,Rimpa school,0
+Q3272569,,luminism,1
+Q3347056,,Flemish Renaissance Revival architecture,0
+Q3347103,,neo-pop,8
+Q3357314,Флорентійська художня школа,Florentine School,1
+Q3376676,,Shanghai School,0
+Q3484823,,simultanism,0
+Q3501307,,Troubadour style,1
+Q3562740,,Volcano school,0
+Q3577791,,Crozant School,0
+Q3577819,,Rouen School,0
+Q3577826,,Wissant school,0
+Q3578034,,École liégeoise de peinture,0
+Q3578035,Ломбардська школа,Lombard school,1
+Q3578530,,Veronese school,0
+Q3624145,,Nuclear art,0
+Q3631050,Живопис Пахарі,Pahari painting,0
+Q3656684,Культура Касей,Kasei culture,0
+Q3667535,,Chiarismo,0
+Q3756540,,Western painting,0
+Q3818926,Північний маньєризм,Northern Mannerism,1
+Q4745501,Американський модернізм,American modernism,0
+Q4745527,,American realism,1
+Q5732065,,Heptanese school,2
+Q5790159,,Andalusian costumbrismo,1
+Q5839353,,,1
+Q6076461,,Romanesque painting in Catalonia,0
+Q9091515,,Universal Constructivism,0
+Q10336318,,neo-primitivism,1
+Q10857409,реалізм,realism,5
+Q10924220,,Late Gothic,1
+Q11131431,,Momoyama Culture,0
+Q11394770,,Maruyama school,0
+Q11448989,,Takuma school,0
+Q11498107,,Golden Age of Illustration,0
+Q11811815,,New Sculpture,0
+Q12348939,,medievalism,1
+Q15838173,Регіоналізм,Regionalism,3
+Q15885248,живопис Відродження,Renaissance painting,0
+Q16191884,Неогрек,Neo-Grec,0
+Q19953535,Вікторіанський живопис,Victorian painting,0
+Q19953536,,neo-Pompeian,0
+Q20020039,,Yushan School,0
+Q21044296,,Potosi School,1
+Q22127329,,Fujiwara no Takanobu school,0
+Q44506816,,,0
+Q56306110,,École d'Écouen,0
+Q56418598,Антикваріанізм,antiquarianism,1
+Q57941195,,Nine Friends of Painting,0
+Q60853744,,French School,0
+Q61444300,,Cezannian cubism,1
+Q64334168,,Late Baroque,0
+Q107424419,Образотворче мистецтво Англії,English painting,0
+Q115169056,,French modernism,0
+Q116843676,,Xin'an School,0
+Q120143150,,School of Avignon,0
+Q136373961,,analphabetic art,2
+Q136373984,,Ritual and Tribal European Art,0
