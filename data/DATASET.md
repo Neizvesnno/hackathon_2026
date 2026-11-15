@@ -9,7 +9,7 @@
 - `paintings.csv` — картини (ключ `painting_id` = QID Wikidata): назви, `artist_id`, `year`, `year_precision`, `genres`, `styles` (QID через `;`), `material`, `collection`, розміри в см, `image_file`, ліцензія.
 - `artists.csv` — художники: імена, роки життя, громадянство, `is_ukrainian`, `sitelinks`, `fame_tier`, `n_paintings_in_sample`.
 - `genres.csv`, `styles.csv` — довідники QID → назви.
-- `images/<художник>/<художник>_<N>.jpg` — мініатюри (ширина до 330 px, JPEG). `N` — порядковий номер картини художника за роком створення (з 1). Однофамільці розрізняються суфіксом `-1`, `-2` (старший — `-1`), напр. `john-collier-1/`. Зв'язок файлу з `painting_id` — колонка `image_file` у `paintings.csv`.
+- `images/<художник>__<artist_id>/<painting_id>.jpg` — мініатюри (ширина до 330 px, JPEG).
 
 Зв'язки: `paintings.artist_id → artists.artist_id`; `paintings.genres → genres.id`; `paintings.styles → styles.id`; `paintings.image_file` — шлях відносно `data/`.
 
