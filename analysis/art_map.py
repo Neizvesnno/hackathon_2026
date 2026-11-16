@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 from sklearn.manifold import TSNE
 
 from core import config
-from core.palette import lab_to_hex, row_to_palette
+from core.palette import lab_to_hex
 
 
 def _palette_vectors(df: pd.DataFrame) -> np.ndarray:
@@ -38,7 +38,7 @@ def build_map(df: pd.DataFrame) -> pd.DataFrame:
         learning_rate="auto",
         init="pca",
         random_state=42,
-        n_iter=750,
+        max_iter=750,
     )
     emb = tsne.fit_transform(X)
 
@@ -64,7 +64,7 @@ def art_map_figure(
         df[["painting_id", "title", "artist_name", "pal_L_1", "pal_a_1", "pal_b_1"]],
         on="painting_id",
         how="left",
-    )
+    ).reset_index(drop=True)
 
     # колір точки = головний колір палітри
     colors = [
@@ -72,13 +72,13 @@ def art_map_figure(
         for r in merged.itertuples()
     ]
 
-    highlight = set(highlight_ids or [])
-    is_hl = merged["painting_id"].isin(highlight)
+    highlight = set(str(x) for x in (highlight_ids or []))
+    is_hl = merged["painting_id"].astype(str).isin(highlight)
+
+    fig = go.Figure()
 
     # звичайні точки
     normal = merged[~is_hl]
-    fig = go.Figure()
-
     if len(normal):
         fig.add_trace(
             go.Scattergl(
@@ -91,7 +91,7 @@ def art_map_figure(
                     opacity=0.65,
                     line=dict(width=0),
                 ),
-                text=normal["title"] + " — " + normal["artist_name"],
+                text=normal["title"].astype(str) + " — " + normal["artist_name"].astype(str),
                 hoverinfo="text",
                 name="картини",
                 showlegend=False,
@@ -112,7 +112,7 @@ def art_map_figure(
                     opacity=1.0,
                     line=dict(width=2, color="#111"),
                 ),
-                text=hl["title"] + " — " + hl["artist_name"],
+                text=hl["title"].astype(str) + " — " + hl["artist_name"].astype(str),
                 hoverinfo="text",
                 name="підібрані",
                 showlegend=False,
