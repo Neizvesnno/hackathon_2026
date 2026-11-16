@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Streamlit secrets and local scratch
+.streamlit/secrets.toml
+tmp/
+scratch/
+*.log
+
+# app_data/*.parquet ми КОМІТИМО — не додавайте їх сюди

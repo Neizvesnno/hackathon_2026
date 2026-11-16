@@ -1,0 +1,10 @@
+# Основні залежності. Нові пакети додає лише R0 (Павло).
+streamlit>=1.36
+pandas>=2.0
+numpy>=1.24
+pillow>=10.0
+scikit-image>=0.22
+scikit-learn>=1.3
+plotly>=5.18
+pyarrow>=14.0
+tqdm>=4.66
