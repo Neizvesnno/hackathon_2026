@@ -8,11 +8,14 @@
 Формула рейтингу (усі складові в 0…1, ваги видимі):
 
     score = (w_color * score_color + w_genre * score_genre
-             + w_century * score_century + w_fame * score_fame)
-            / (w_color + w_genre + w_century + w_fame)
+             + w_century * score_century + w_fame * score_fame
+             + w_ukr * score_ukrainian)
+            / (w_color + w_genre + w_century + w_fame + w_ukr)
 
     w_color, w_genre, w_century  — з параметра `weights` (за замовчуванням 1 / 0 / 0)
     w_fame = |fame| * weights["fame"]   (необов'язковий ключ, за замовчуванням 0.5)
+    w_ukr  = weights["ukrainian"]       (необов'язковий ключ, за замовчуванням 0 = вимкнено;
+                                         для галочки «українські автори» рекомендовано 0.3)
 """
 from __future__ import annotations
 
@@ -23,7 +26,7 @@ import pandas as pd
 # Константи
 # ---------------------------------------------------------------------------
 
-DEFAULT_WEIGHTS = {"color": 1.0, "genre": 0.0, "century": 0.0, "fame": 0.5}
+DEFAULT_WEIGHTS = {"color": 1.0, "genre": 0.0, "century": 0.0, "fame": 0.5, "ukrainian": 0.0}
 
 # Масштаб переходу «відстань ΔE00 -> оцінка 0…1»: score_color = exp(-d / COLOR_SCALE).
 # d = 0 -> 1.0; d = 20 -> 0.37; d = 40 -> 0.14.
@@ -198,6 +201,13 @@ def _genre_score(genre_col: pd.Series, wanted: list[str] | None) -> np.ndarray:
     return genre_col.isin(list(wanted)).to_numpy(float)
 
 
+def _ukrainian_score(df: pd.DataFrame) -> np.ndarray:
+    """1, якщо автор український (is_ukrainian), інакше 0. Немає колонки -> усі 0."""
+    if "is_ukrainian" not in df.columns:
+        return np.zeros(len(df))
+    return df["is_ukrainian"].fillna(False).astype(bool).to_numpy(float)
+
+
 # ---------------------------------------------------------------------------
 # Головна функція
 # ---------------------------------------------------------------------------
@@ -215,15 +225,17 @@ def recommend(
     """Топ-`top_k` картин для палітри стіни.
 
     mode     "harmony" — схожі кольори; "accent" — комплементарні (a, b -> -a, -b).
-    weights  {"color", "genre", "century"[, "fame"]}; відсутні ключі беруться за замовчуванням,
-             від'ємні ваги вважаються нулем.
+    weights  {"color", "genre", "century"[, "fame"][, "ukrainian"]}; відсутні ключі беруться
+             за замовчуванням, від'ємні ваги вважаються нулем.
+             "ukrainian" — бонус для українських авторів (is_ukrainian): 0 = вимкнено,
+             для галочки в інтерфейсі рекомендовано 0.3.
     fame     -1 = відкриття (маловідомі) … +1 = відомі; 0 — відомість не впливає.
     genres   бажані genre_main; None/[] = будь-які. Впливає лише з weights["genre"] > 0.
     centuries бажані століття; None/[] = будь-які; сусідні століття дають часткову оцінку.
              Впливає лише з weights["century"] > 0.
 
     Повертає top_k рядків df (усі колонки) + score, score_color, score_genre,
-    score_century, score_fame (кожна 0…1), відсортовано за score спаданням.
+    score_century, score_fame, score_ukrainian (кожна 0…1), відсортовано за score спаданням.
     """
     if mode not in _MODES:
         raise ValueError(f"mode має бути одним із {_MODES}, отримано {mode!r}")
@@ -240,7 +252,8 @@ def recommend(
 
     if len(df) == 0:
         out = df.copy()
-        for c in ("score", "score_color", "score_genre", "score_century", "score_fame"):
+        for c in ("score", "score_color", "score_genre", "score_century",
+                  "score_fame", "score_ukrainian"):
             out[c] = pd.Series(dtype=float)
         return out
 
@@ -256,15 +269,20 @@ def recommend(
     # --- відомість: 0.5 + fame * (рівень - 0.5); при fame=0 однакова для всіх ---
     score_fame = 0.5 + fame * (_fame_level(df) - 0.5)
 
+    # --- українські автори: 1 / 0 (діє лише з weights["ukrainian"] > 0) ---
+    score_ukrainian = _ukrainian_score(df)
+
     # --- підсумок ---
     w_color, w_genre, w_century = w["color"], w["genre"], w["century"]
     w_fame = abs(fame) * w["fame"]
-    total_w = w_color + w_genre + w_century + w_fame
+    w_ukr = w["ukrainian"]
+    total_w = w_color + w_genre + w_century + w_fame + w_ukr
     if total_w <= 0:                       # усі ваги нульові -> лише колір
         w_color, total_w = 1.0, 1.0
     score = (
         w_color * score_color + w_genre * score_genre
         + w_century * score_century + w_fame * score_fame
+        + w_ukr * score_ukrainian
     ) / total_w
 
     # --- топ-k (стабільно: при рівності — за кольором, потім за порядком у df) ---
@@ -275,4 +293,5 @@ def recommend(
     out["score_genre"] = score_genre[order]
     out["score_century"] = score_century[order]
     out["score_fame"] = score_fame[order]
+    out["score_ukrainian"] = score_ukrainian[order]
     return out.reset_index(drop=True)
