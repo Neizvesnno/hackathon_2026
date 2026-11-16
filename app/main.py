@@ -8,6 +8,7 @@ import pandas as pd  # noqa: E402
 import streamlit as st  # noqa: E402
 
 from ui_controls import render_controls  # noqa: E402  (app/ вже в sys.path — його додає streamlit)
+from ui_extras import render_map, render_tryon  # noqa: E402
 from ui_results import render_results  # noqa: E402
 from ui_wall import render_wall  # noqa: E402
 from core import config  # noqa: E402
@@ -34,4 +35,10 @@ else:
     params = render_controls(df)   # kwargs для recommend(wall, df, **params)
 
     st.divider()
-    results = render_results(wall, df, params)   # топ-12; також у st.session_state["results"]
+    tab_art, tab_tryon, tab_map = st.tabs(["Картини", "Примірка", "Мапа"])
+    with tab_art:
+        results = render_results(wall, df, params)   # топ-12; також у st.session_state["results"]
+    with tab_tryon:
+        render_tryon(results)
+    with tab_map:
+        render_map(df, results)
