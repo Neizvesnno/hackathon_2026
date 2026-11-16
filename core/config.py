@@ -12,6 +12,7 @@ STYLES_CSV = DATA_DIR / "styles.csv"
 
 FEATURES_PATH = APP_DATA / "features.parquet"
 MAP_COORDS_PATH = APP_DATA / "map_coords.parquet"
+MOOD_TAGS_PATH = APP_DATA / "mood_tags.parquet"
 
 # Картинки застосунок вантажить з GitHub за URL, а не з диска: IMAGE_BASE_URL + image_file
 IMAGE_BASE_URL = "https://raw.githubusercontent.com/Neizvesnno/hackathon_2026/main/data/"
