@@ -41,6 +41,22 @@ if df is not None and MOOD_PATH.exists():
     except Exception:   # без настроїв застосунок працює як раніше
         pass
 
+# Жанри Wikidata: ню, еротичне мистецтво, оголена жінка, оголений автопортрет
+NUDE_GENRES = {"Q40446", "Q1168168", "Q22808839", "Q60133444"}
+NUDE_WORDS = (r"\b(?:nude|naked|bathers?|bathing|venus|susanna|dana[eë]|leda|nymphs?|odalisque)\b"
+              r"|оголен|купальниц|венер|німф")
+
+
+def nude_mask(frame: pd.DataFrame) -> pd.Series:
+    """True для картин з оголеною натурою: за жанром Wikidata або за словами в назві (наближено)."""
+    mask = pd.Series(False, index=frame.index)
+    if "genre_ids" in frame.columns:
+        mask |= frame["genre_ids"].fillna("").map(lambda s: bool(NUDE_GENRES & set(str(s).split(";"))))
+    if "title" in frame.columns:
+        mask |= frame["title"].fillna("").str.contains(NUDE_WORDS, case=False, regex=True)
+    return mask
+
+
 wall = render_wall()   # палітра стіни (k, 4) або None; також у st.session_state["wall_palette"]
 
 st.divider()
@@ -59,6 +75,12 @@ else:
             picked = df[df["mood_1"].isin(moods) | df["mood_2"].isin(moods)]
             if len(picked):
                 df_rec = picked
+
+    if df_rec is not None and st.toggle(
+        "Приховати оголену натуру", value=True, key="ctl_safe",
+        help="Прибирає картини жанру «ню» і з відповідними словами в назві. Фільтр наближений.",
+    ):
+        df_rec = df_rec[~nude_mask(df_rec)]
 
     st.divider()
     tab_art, tab_tryon, tab_map = st.tabs(["Картини", "Примірка", "Мапа"])
