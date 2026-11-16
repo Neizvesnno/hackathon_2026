@@ -106,6 +106,8 @@ def active_parts(params: dict | None) -> list[tuple[str, str]]:
         parts.append(("score_century", "століття"))
     if p.get("fame"):
         parts.append(("score_fame", "відомість"))
+    if w.get("ukrainian", 0) > 0:
+        parts.append(("score_ukrainian", "укр. автор"))
     return parts
 
 
@@ -124,7 +126,7 @@ def parts_html(row, parts) -> str:
 def card_html(row, show_score: bool, parts=()) -> str:
     year = "" if pd.isna(row.get("year")) else str(int(row["year"]))
     meta = " · ".join(x for x in (_txt(row.get("artist_name")), year) if x)
-    genre = _txt(row.get("genre_main"))
+    genre = " · ".join(x for x in (_txt(row.get("genre_main")), _txt(row.get("mood_1"))) if x)
     attr = " · ".join(x for x in (_txt(row.get("attribution")), _txt(row.get("license"))) if x)
     title = _txt(row.get("title"), "Без назви")
     score = ""

@@ -82,6 +82,9 @@ def render_controls(df: pd.DataFrame | None = None) -> dict:
         if sum(weights.values()) == 0:
             st.caption("Усі ваги на нулі — рахуємо лише за кольором.")
             weights["color"] = 1.0
+        if st.checkbox("Спершу українські автори", key="ctl_ukr",
+                       help="Картини українських художників, найближчі до стіни за кольором, ідуть першими."):
+            weights["ukrainian"] = 0.5
 
     params = {
         "mode": MODES[mode_label],
