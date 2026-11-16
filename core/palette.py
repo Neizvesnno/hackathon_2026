@@ -1,4 +1,4 @@
-"""Палітри кольорів. Власник: R1 (Олександр). Формат палітри — див. CONTRACT.md."""
+
 from __future__ import annotations
 
 import warnings
@@ -13,7 +13,7 @@ _SIDE = 64  # до якого розміру зменшуємо довшу ст�
 
 
 def _to_rgb_array(img: Image.Image, side: int = _SIDE) -> np.ndarray:
-    """PIL -> масив пікселів (N, 3) у RGB 0…1, зменшений до ~side px."""
+
     if img.mode in ("RGBA", "LA", "P"):
         img = img.convert("RGBA")
         bg = Image.new("RGBA", img.size, (255, 255, 255, 255))
@@ -25,11 +25,7 @@ def _to_rgb_array(img: Image.Image, side: int = _SIDE) -> np.ndarray:
 
 
 def extract_palette(img: Image.Image, k: int = 5) -> np.ndarray:
-    """k домінантних кольорів зображення в CIELAB + частки площі.
 
-    Повертає np.ndarray форми (k, 4): [L, a, b, частка], частки в сумі = 1,
-    рядки відсортовані за часткою спаданням. Працює і для картин, і для фото стіни.
-    """
     rgb = _to_rgb_array(img)
     lab = rgb2lab(rgb.reshape(-1, 1, 3)).reshape(-1, 3)
 
@@ -51,7 +47,7 @@ def extract_palette(img: Image.Image, k: int = 5) -> np.ndarray:
 
 
 def row_to_palette(row: pd.Series, k: int = 5) -> np.ndarray:
-    """Збирає палітру (k, 4) з колонок pal_L_i, pal_a_i, pal_b_i, pal_w_i рядка features.parquet."""
+
     return np.array(
         [[row[f"pal_{c}_{i}"] for c in ("L", "a", "b", "w")] for i in range(1, k + 1)],
         dtype=np.float64,
@@ -59,7 +55,7 @@ def row_to_palette(row: pd.Series, k: int = 5) -> np.ndarray:
 
 
 def lab_to_hex(lab: np.ndarray) -> str:
-    """[L, a, b] -> '#rrggbb' (для плашок кольорів в інтерфейсі)."""
+
     lab = np.asarray(lab, dtype=np.float64)[:3].reshape(1, 1, 3)
     rgb = np.clip(lab2rgb(lab).reshape(3), 0.0, 1.0)
     r, g, b = (int(round(v * 255)) for v in rgb)
