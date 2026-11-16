@@ -80,6 +80,12 @@ _CSS = """
 .art-title{font-weight:600;font-size:.9rem;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .art-meta{font-size:.8rem;opacity:.85;line-height:1.3;overflow-wrap:anywhere}
 .art-score{font-size:.75rem;font-weight:600;margin-top:2px}
+.art-parts{display:flex;flex-direction:column;gap:3px;margin-top:4px}
+.art-part{display:flex;align-items:center;gap:6px;font-size:.65rem;opacity:.85}
+.art-part span:first-child{flex:0 0 4.6em}
+.art-part span:last-child{flex:0 0 2.2em;text-align:right}
+.art-bar{flex:1 1 auto;height:4px;border-radius:2px;background:rgba(128,128,128,.25);overflow:hidden}
+.art-bar i{display:block;height:100%;background:#e0575b;border-radius:2px}
 .art-attr{font-size:.65rem;opacity:.6;line-height:1.25;margin-top:4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
 </style>
 """
@@ -89,7 +95,33 @@ def _txt(value, default: str = "") -> str:
     return default if value is None or pd.isna(value) else html.escape(str(value))
 
 
-def card_html(row, show_score: bool) -> str:
+def active_parts(params: dict | None) -> list[tuple[str, str]]:
+    """Які складові score показувати: лише ті, що зараз справді впливають на рейтинг."""
+    p = params or {}
+    w = p.get("weights") or {}
+    parts = [("score_color", "колір")]
+    if p.get("genres") and w.get("genre", 0) > 0:
+        parts.append(("score_genre", "жанр"))
+    if p.get("centuries") and w.get("century", 0) > 0:
+        parts.append(("score_century", "століття"))
+    if p.get("fame"):
+        parts.append(("score_fame", "відомість"))
+    return parts
+
+
+def parts_html(row, parts) -> str:
+    rows = []
+    for col, label in parts:
+        v = row.get(col)
+        if v is None or pd.isna(v):
+            continue
+        pct = round(min(max(float(v), 0.0), 1.0) * 100)
+        rows.append(f'<div class="art-part"><span>{label}</span>'
+                    f'<div class="art-bar"><i style="width:{pct}%"></i></div><span>{pct}%</span></div>')
+    return f'<div class="art-parts">{"".join(rows)}</div>' if rows else ""
+
+
+def card_html(row, show_score: bool, parts=()) -> str:
     year = "" if pd.isna(row.get("year")) else str(int(row["year"]))
     meta = " · ".join(x for x in (_txt(row.get("artist_name")), year) if x)
     genre = _txt(row.get("genre_main"))
@@ -97,7 +129,7 @@ def card_html(row, show_score: bool) -> str:
     title = _txt(row.get("title"), "Без назви")
     score = ""
     if show_score and not pd.isna(row.get("score")):
-        score = f'<div class="art-score">Збіг {round(float(row["score"]) * 100)}%</div>'
+        score = f'<div class="art-score">Збіг {round(float(row["score"]) * 100)}%</div>' + parts_html(row, parts)
     return (
         '<div class="art-card">'
         f'<div class="art-img"><img src="{html.escape(str(row["image_url"]), quote=True)}" alt="{title}" loading="lazy"></div>'
@@ -111,8 +143,8 @@ def card_html(row, show_score: bool) -> str:
     )
 
 
-def grid_html(results: pd.DataFrame, show_score: bool) -> str:
-    cards = "".join(card_html(row, show_score) for _, row in results.iterrows())
+def grid_html(results: pd.DataFrame, show_score: bool, parts=()) -> str:
+    cards = "".join(card_html(row, show_score, parts) for _, row in results.iterrows())
     css = "".join(line.strip() for line in _CSS.splitlines())   # одним рядком, щоб markdown не чіпав
     return f'{css}<div class="art-grid">{cards}</div>'
 
@@ -135,5 +167,8 @@ def render_results(wall: np.ndarray, df: pd.DataFrame | None, params: dict) -> p
     if results.empty:
         st.info("За такими фільтрами нічого не знайшлося — прибери частину фільтрів.")
     else:
-        st.markdown(grid_html(results, show_score=source == "recommend"), unsafe_allow_html=True)
+        st.markdown(
+            grid_html(results, show_score=source == "recommend", parts=active_parts(params)),
+            unsafe_allow_html=True,
+        )
     return results
