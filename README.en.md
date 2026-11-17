@@ -1,4 +1,4 @@
-🇺🇦 [Українська версія](README.md)
+ 🇺🇦 [Українська версія](README.md)
 
 # Paint Your Wall
 
@@ -8,7 +8,7 @@ An app that finds a painting for a specific wall. Take a photo of the wall or pi
 
 Built at the KSE Python Hackathon on Open Data (Kyiv School of Economics, 16 November 2026). The project received the maximum jury score.
 
-<!-- Screenshot or GIF: wall photo → matched paintings → try-on -->
+![Demo: wall photo → matched paintings → try-on](https://github.com/user-attachments/assets/f4bcf3c6-4401-4236-bb0c-717a25ea4bc1)
 
 ## Features
 
@@ -23,9 +23,12 @@ Built at the KSE Python Hackathon on Open Data (Kyiv School of Economics, 16 Nov
 - **Try-on.** The chosen painting is placed on a photo of the room, with a frame and a shadow.
 - **Art map.** All 10,000 paintings as points in colour space (t-SNE), with the matches highlighted.
 
+![Try-on: a painting on a wall at KSE](https://github.com/user-attachments/assets/f0ef3626-738c-44b4-9b02-8e695f2fc46d)
+*Try-on: «A bag of groceries» by Karl Witkowski (public domain)*
+
 ## Data
 
-10,000 paintings from the 12th to the 21st century by 5,783 artists. Metadata comes from Wikidata (CC0), thumbnails from Wikimedia Commons. The licence and author of every file are listed in `data/paintings.csv` and shown under each painting in the app.
+10,000 paintings from the 12th to the 21st century by 5,783 artists. Metadata comes from [Wikidata](https://www.wikidata.org) (CC0), thumbnails from [Wikimedia Commons](https://commons.wikimedia.org). The licence and author of every file are listed in `data/paintings.csv` and shown under each painting in the app.
 
 The sample is stratified: no more than 15 paintings per artist, 63% of works by lesser-known artists, an even spread across centuries and genres, and 948 paintings by Ukrainian artists. Details in `data/DATASET.md`.
 
